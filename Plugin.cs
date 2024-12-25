@@ -10,18 +10,18 @@ namespace AssetBundleTemplate
 	[BepInPlugin(PluginInfo.GUID, PluginInfo.Name, PluginInfo.Version)]
 	public class Plugin : BaseUnityPlugin
 	{
-		public static Plugin instance;
+	public static Plugin instance;
         public static AssetBundle bundle;
         public static GameObject assetBundleParent;
         public static string parentName = "ggg";
         void Start()
-		{
+	{
             GorillaTagger.OnPlayerSpawned(OnGameInitialized);
-		}
-		void OnGameInitialized()
-		{
+	}
+	void OnGameInitialized()
+	{
 			instance = this;
-            bundle = LoadAssetBundle("ggg.AssetBundles.ggg");
+            bundle = LoadAssetBundle("ggg.ggg");
             assetBundleParent = Instantiate(bundle.LoadAsset<GameObject>(parentName));
             assetBundleParent.transform.position = new Vector3(-67.2225f, 11.575f, -82.6090f);
         }
